@@ -7,7 +7,7 @@ const server = http.createServer(app)
 // const {Server} = require('socket.io')
 // const io = new Server(server)
 const players = {}
-const port = 4000
+const port = 'https://multiplayergame-server.vercel.app/'
 
 const io = require("socket.io")(server, {
     cors: {
