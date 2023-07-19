@@ -9,8 +9,6 @@ const server = http.createServer(app)
 const players = {}
 const port = 'https://multiplayergame-server.vercel.app/'
 
-console.log(server)
-
 const io = require("socket.io")(server, {
     cors: {
       origin: "https://2dgamev23.vercel.app/",
@@ -94,6 +92,7 @@ io.on('connection', (socket) => {
 })
 
 setInterval(() => {
+    console.log(server)
     io.emit('updatePlayers', players)
 }, 1)
 
