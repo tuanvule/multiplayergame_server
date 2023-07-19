@@ -9,7 +9,7 @@ const server = http.createServer(app)
 const players = {}
 const port = 'https://multiplayergame-server.vercel.app/'
 
-const io = require("socket.io")(server, {
+const io = require("socket.io")('https://multiplayergame-server.vercel.app/', {
     cors: {
       origin: "https://2dgamev23.vercel.app/",
       methods: ["GET", "POST"]
