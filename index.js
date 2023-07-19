@@ -3,6 +3,7 @@
 const express = require('express');
 const app = express();
 const http = require('http');
+const { join } = require('path');
 const server = http.createServer(app)
 // const {Server} = require('socket.io')
 // const io = new Server(server)
@@ -30,7 +31,7 @@ app.use((req, res, next) => {
 
 app.get('/', (req, res) => {
     // res.sendFile(__dirname + 'index.html')
-    res.json({ message: 'something'})
+    res.json({ message: JSON.stringify(server)})
 })
 
 function random_rgba() {
