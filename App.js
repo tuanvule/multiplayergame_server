@@ -11,7 +11,7 @@ const port = 'https://multiplayergame-server.vercel.app/'
 
 const io = require("socket.io")(server, {
     cors: {
-      origin: "http://127.0.0.1:5500",
+      origin: "https://2dgamev23.vercel.app/",
       methods: ["GET", "POST"]
     },
     pingInterval: 2000,
@@ -21,15 +21,15 @@ const io = require("socket.io")(server, {
 
 app.use(express.static("public"))
 
-app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:5500/");
-    res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
-    res.setHeader("Access-Control-Allow-Headers", "*");
-    next();
-  })
+// app.use((req, res, next) => {
+//     res.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:5500/");
+//     res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
+//     res.setHeader("Access-Control-Allow-Headers", "*");
+//     next();
+//   })
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + 'index.html')
+    // res.sendFile(__dirname + 'index.html')
     res.json({ message: 'something'})
 })
 
