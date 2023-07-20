@@ -12,7 +12,7 @@ const port = 'https://multiplayergame-server.vercel.app/'
 
 const io = require("socket.io")(server, {
     cors: {
-      origin: "https://2dgamev23.vercel.app/",
+      origin: "http://127.0.0.1:5500/",
       methods: ["GET", "POST"]
     },
     pingInterval: 2000,
