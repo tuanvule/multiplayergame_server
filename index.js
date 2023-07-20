@@ -14,7 +14,7 @@ const io = require("socket.io")(server, {
     cors: {
       origin: "http://127.0.0.1:5500/",
       methods: ["GET", "POST"],
-      allowedHeaders: ["my-custom-header"],
+      allowedHeaders: ["origin"],
       credentials: true
     },
     pingInterval: 2000,
