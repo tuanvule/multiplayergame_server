@@ -10,8 +10,28 @@ const {Server} = require('socket.io')
 const players = {}
 const port = 'https://multiplayergame-server.vercel.app'
 
-const io = new Server(server);
+const io = new Server(server,{
+    cors: {
+      origin: "http://127.0.0.1:5500",
+      methods: ["GET", "POST"],
+    //   allowedHeaders: ["origin"],
+    //   credentials: true
+    },
+    pingInterval: 24 * 60 * 60 * 1000,
+    pingTimeout: 3 * 24 * 60 * 60 * 1000,
+  });
 // console.log(io)
+
+// {
+//     cors: {
+//       origin: "http://127.0.0.1:5500",
+//       methods: ["GET", "POST"],
+//     //   allowedHeaders: ["origin"],
+//     //   credentials: true
+//     },
+//     pingInterval: 24 * 60 * 60 * 1000,
+//     pingTimeout: 3 * 24 * 60 * 60 * 1000,
+//   }
 
 app.use(express.static("public"))
 
