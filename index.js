@@ -5,20 +5,20 @@ const app = express();
 const http = require('http');
 const { join } = require('path');
 const server = http.createServer(app)
-// const {Server} = require('socket.io')
+const {Server} = require('socket.io')
 // const io = new Server(server)
 const players = {}
-const port = 'https://multiplayergame-server.vercel.app/'
+const port = 'wss://multiplayergame-server.vercel.app'
 
-const io = require("socket.io")(server, {
+const io = new Server(server, {
     cors: {
       origin: "http://127.0.0.1:5500",
       methods: ["GET", "POST"],
     //   allowedHeaders: ["origin"],
     //   credentials: true
     },
-    pingInterval: 2000,
-    pingTimeout: 5000,
+    pingInterval: 24 * 60 * 60 * 1000,
+    pingTimeout: 3 * 24 * 60 * 60 * 1000,
   });
 // console.log(io)
 
